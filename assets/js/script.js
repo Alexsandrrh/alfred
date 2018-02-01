@@ -1,12 +1,29 @@
 $(function() {
-	$('.js-showHide').click(function(){
-	    $('.alfred').toggleClass('-invisible');
-    });
 
-    var alferdspeak = 'Привет, меня зовут Альфред.'
+    function showBubble(text) {
+    	$('.bubble').text(text);
+		$('.bubble').addClass('-visible');
+		setTimeout(function() {
+    	$('.bubble').removeClass('-visible');
+    }, 2000);
+    }
 
-    $('.js-alfredTalk').click(function(){
-    	$('.bubble').text(alferdspeak);
-    	$('.bubble').toggleClass('-visible');
-    });
+
+    function showFristInput() {
+		var inputText = $('.js-firstNumber').val();
+		if (inputText == "") {
+			inputText = "NO TEXT";
+			showBubble("NO TEXT");
+		}
+		else {
+			showBubble(inputText);
+		}   	
+    }
+    
+
+	$('.js-count').click(function() {
+		showBubble($('.js-firstNumber').val() + $('.js-secondNumber').val());
+	});
+
+
 });
