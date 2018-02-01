@@ -1,5 +1,5 @@
 $(function() {
-
+    // Function
     function showBubble(text) {
     	$('.bubble').text(text);
 		$('.bubble').addClass('-visible');
@@ -7,7 +7,6 @@ $(function() {
     	$('.bubble').removeClass('-visible');
     }, 2000);
     }
-
 
     function showFristInput() {
 		var inputText = $('.js-firstNumber').val();
@@ -20,7 +19,7 @@ $(function() {
 		}   	
     }
     
-
+    // Command
 	$('.js-count').click(function() {
 		showBubble($('.js-firstNumber').val() + $('.js-secondNumber').val());
 	});
