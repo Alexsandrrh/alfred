@@ -1,0 +1,55 @@
+body {
+	margin: 0;
+	font-family: Trebuchet MS;
+	background: #f4f4f4;
+}
+
+.alfred {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -90%);
+	transition: .3s;
+}
+
+.alfred.-invisible {
+	opacity: 0;
+}
+
+.control-panel {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%);
+	width: 500px;
+	height: 250px;
+	background: #565656;
+	border-radius: 10px;
+}
+
+ .bubble {
+ 	position: absolute;
+ 	right: -160px;
+ 	top: -40px;
+ 	padding: 40px;
+ 	background-color: white;
+ 	color: black;
+ 	font-weight: 900;
+ 	border-radius: 15px;
+ 	opacity: 0;	
+ }
+
+ .bubble.-visible {
+ 	opacity: 1;
+ }
+
+ .bubble:before {
+ 	position: absolute;
+ 	display: block;
+ 	content: "";
+ 	bottom: 0px;
+ 	left: 0px;
+ 	background-color: white;
+ 	width: 15px;
+ 	height: 15px;
+ }
