@@ -82,6 +82,8 @@ input {
 button {
 	cursor: pointer;
 	transition: 1s;
+	width: 60px;
+	font-size: 32px;
 }
 
 button:hover {
