@@ -4,6 +4,12 @@ $(function() {
 	$('.js-plus').click(function() {
 		if (checkInputData()) {
 			showBubble(Number(getFirstWord()) + Number(getSecondWord()));
+		} else {
+			if (checkInputData().empty) {
+				showBubble('NO');
+			} else {
+				showBubble(getFirstWord() + ' ' + getSecondWord());
+			}
 		}
 	});
 
@@ -11,6 +17,12 @@ $(function() {
 	$('.js-minus').click(function() {
 		if (checkInputData()) {
 			showBubble(Number(getFirstWord()) - Number(getSecondWord()));
+		} else {
+			if (checkInputData().empty) {
+				showBubble('NO');
+			} else {
+				showBubble(getFirstWord() + ' ' + getSecondWord());
+			}
 		}
 	});
 
@@ -18,6 +30,12 @@ $(function() {
 	$('.js-multiply').click(function() {
 		if (checkInputData()) {
 			showBubble(Number(getFirstWord()) * Number(getSecondWord()));
+		} else {
+			if (checkInputData().empty) {
+				showBubble('NO');
+			} else {
+				showBubble(getFirstWord() + ' ' + getSecondWord());
+			}
 		}
 	});
 
@@ -32,6 +50,8 @@ $(function() {
 				showBubble(getFirstWord() + ' ' + getSecondWord());
 			}
 		}
+
+        showNotNumericData();
 	});		
 
 
@@ -70,6 +90,14 @@ $(function() {
 				isNumber: false,
 				empty: false
 			};
+		}
+	}
+
+	function showNotNumericData() {
+		if ((getFirstWord() || getSecondWord()) == 0) {
+			showBubble("I'm so sorry it zero!");
+		} else if ((getSecondWord() || getFirstWord()) == 0) {
+			showBubble("I'm so sorry it zero!");
 		}
 	}
 
