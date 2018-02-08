@@ -1,5 +1,82 @@
 $(function() {
+	var superHero = {
+		name: 'Superman',
+		age: 25,
+		gender: 'Male',
+		params: {
+			height: 175,
+			weight: 68,
+			color: 'white',
+			strength: 90,
+			intelegence: 98,
+			agility: 80
+		},
+		power: {
+			main: 'snowball',
+			secondary: 'speed'
+		}
+	}
 
+console.log(superHero.params.strength);
+
+$('.js-superHero').click(function() {
+	showBubble(superHero);
+});
+
+$('.js-change').click(function() {
+	superHero.params.height = getFirstWord();
+	showBubbleWithMarkup(superHero.params.height);
+});
+
+var fruits = ['Orange','Banana','Apple','Au'];
+
+$('.js-addElem').click(function() {
+	fruits.push(getSecondWord());
+	showBubble(fruits);
+});
+
+for (var i = 0; i < fruits.length; i++) {
+	$('.test-array').append(fruits[i] + '</br>');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================================================
     // PLUS
 	$('.js-plus').click(function() {
 		if (checkInputData()) {
@@ -44,6 +121,14 @@ $(function() {
     // FUNCTION
     function showBubble(text) {
     	$('.bubble').text(text);
+		$('.bubble').addClass('-visible'); 
+		setTimeout(function() {
+    	$('.bubble').removeClass('-visible');
+    }, 5000);
+    }
+
+        function showBubbleWithMarkup(blocks) {
+    	$('.bubble').append(blocks);
 		$('.bubble').addClass('-visible'); 
 		setTimeout(function() {
     	$('.bubble').removeClass('-visible');

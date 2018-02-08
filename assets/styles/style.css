@@ -79,7 +79,7 @@ input {
 	margin-bottom: 20px;
 }
 
-button {
+.calc-panel button {
 	cursor: pointer;
 	transition: 1s;
 	width: 60px;
@@ -93,3 +93,23 @@ button:hover {
 button:active {
 	background: green;
 }
+
+.calc-panel {
+	margin-bottom: 20px;
+}
+
+.var-panel button {
+	width: 150;
+}
+
+.test-array {
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	width: 400px;
+	height: 200px;
+	background-color: #565656;
+	border-radius: 20px;
+	color: #fff;
+}
+
