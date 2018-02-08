@@ -5,13 +5,8 @@ $(function() {
 		if (checkInputData()) {
 			showBubble(Number(getFirstWord()) + Number(getSecondWord()));
 		} else {
-			if (checkInputData().empty) {
-				showBubble('NO');
-			} else {
-				showBubble(getFirstWord() + ' ' + getSecondWord());
-			}
+			showNotNumericData();
 		}
-		showNotNumericData();
 	});
 
 	// MINUS
@@ -19,13 +14,8 @@ $(function() {
 		if (checkInputData()) {
 			showBubble(Number(getFirstWord()) - Number(getSecondWord()));
 		} else {
-			if (checkInputData().empty) {
-				showBubble('NO');
-			} else {
-				showBubble(getFirstWord() + ' ' + getSecondWord());
-			}
+			showNotNumericData();
 		}
-		showNotNumericData();
 	});
 
     // MULTIPLY
@@ -33,13 +23,8 @@ $(function() {
 		if (checkInputData()) {
 			showBubble(Number(getFirstWord()) * Number(getSecondWord()));
 		} else {
-			if (checkInputData().empty) {
-				showBubble('NO');
-			} else {
-				showBubble(getFirstWord() + ' ' + getSecondWord());
-			}
+			showNotNumericData();
 		}
-		showNotNumericData();
 	});
 
     // DIVIDE
@@ -47,14 +32,9 @@ $(function() {
 		if (checkInputData().isNumber) {
 			showBubble(Number(getFirstWord()) / Number(getSecondWord()));
 		} else {
-			if (checkInputData().empty) {
-				showBubble('NO');
-			} else {
-				showBubble(getFirstWord() + ' ' + getSecondWord());
-			}
+			showNotNumericData();
 		}
-
-        showNotNumericData();
+		showZero();
 	});		
 
 
@@ -97,9 +77,15 @@ $(function() {
 	}
 
 	function showNotNumericData() {
-		if ((getFirstWord() || getSecondWord()) == 0) {
-			showBubble("I'm so sorry it zero!");
-		} else if ((getSecondWord() || getFirstWord()) == 0) {
+        if (checkInputData().empty) {
+			showBubble('NO');
+		} else {
+			showBubble(getFirstWord() + ' ' + getSecondWord());
+		}
+	}
+
+	function showZero() {
+		if ((getSecondWord() || getFirstWord()) == "0") {
 			showBubble("I'm so sorry it zero!");
 		}
 	}
