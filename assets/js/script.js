@@ -11,6 +11,7 @@ $(function() {
 				showBubble(getFirstWord() + ' ' + getSecondWord());
 			}
 		}
+		showNotNumericData();
 	});
 
 	// MINUS
@@ -24,6 +25,7 @@ $(function() {
 				showBubble(getFirstWord() + ' ' + getSecondWord());
 			}
 		}
+		showNotNumericData();
 	});
 
     // MULTIPLY
@@ -37,6 +39,7 @@ $(function() {
 				showBubble(getFirstWord() + ' ' + getSecondWord());
 			}
 		}
+		showNotNumericData();
 	});
 
     // DIVIDE
