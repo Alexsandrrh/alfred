@@ -31,13 +31,20 @@ $('.js-change').click(function() {
 var fruits = ['Orange','Banana','Apple','Au'];
 
 $('.js-addElem').click(function() {
-	fruits.push(getSecondWord());
-	showBubble(fruits);
+	if (getSecondWord() == '') {
+		showBubble('Fail');
+		showArray('Fail');
+	} else {
+	    fruits.push(getSecondWord());
+	    showBubble(fruits);
+	    showArray(fruits);
+	}
 });
 
-for (var i = 0; i < fruits.length; i++) {
-	$('.test-array').append(fruits[i] + '</br>');
-}
+    function showArray(text) {
+    $('.test-array').text(text);
+	}; 
+
 
 
 
